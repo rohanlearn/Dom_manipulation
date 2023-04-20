@@ -36,3 +36,32 @@ var li= document.getElementsByTagName("li");
 var lie=document.getElementsByClassName("list-r");
 
 lie[0].innerText="hi";
+li[4].innerText="H1"
+// Queryselector
+// Make the 2nd item have green background color
+// Make the 3rd item invisible
+
+
+var item2 = document.querySelector('.list-group-item:nth-child(2)');
+
+item2.style.backgroundColor="green";
+
+var item3 = document.querySelector('.list-group-item:nth-child(3)');
+item3.style.opacity="0";
+
+
+
+
+//QueryslectorAll
+//Using QuerySelectorALL change the font color to green for 2nd item in the item list
+//Choose all the odd elements and make their background green using QuerySelectorALL
+
+var items = document.querySelectorAll('.list-group-item');
+
+items[1].style.color='green';
+
+var odd = document.querySelectorAll("li:nth-child(odd)");
+
+ for(i=0;i<odd.length;i++){
+    odd[i].style.backgroundColor="#0f0";
+}
