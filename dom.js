@@ -2,66 +2,52 @@
 // Now make ADD ITEM bold and chage the font color to greeen
 
 
-
-var headerTitle = document.getElementById("header-title");
-
-console.log(headerTitle);
-// headerTitle.textContent="Hello";
-
-// headerTitle.innerText="Goodbye";
-
-// 
-
-// headerTitle.innerHTML='<h3>Hello</h3>';
-
-headerTitle.style.border='solid 3px black'
-
-var addItem = document.getElementsByClassName("title");
-console.log(addItem)
-addItem[0].style.fontWeight="bold";
-addItem[0].style.color='green';
-
-var items = document.getElementsByClassName('list-group-item');
-
-for (i=0;i<items.length;i++){
-    items[i].style.fontWeight="bold";
-}
-
-items[2].style.backgroundColor="green";
-
-// Add a new li element without the same class Name
-// And try editing it with getelementsbyclassname and then by getelementbytagname
-var li= document.getElementsByTagName("li");
-
-var lie=document.getElementsByClassName("list-r");
-
-lie[0].innerText="hi";
-li[4].innerText="H1"
-// Queryselector
-// Make the 2nd item have green background color
-// Make the 3rd item invisible
+var itenList = document.querySelector("#items");
+console.log("current",itenList)
+// parentElement
+console.log("parentNode=",itenList.parentNode);
+itenList.parentNode.style.backgroundColor='red'
 
 
-var item2 = document.querySelector('.list-group-item:nth-child(2)');
+//ChildNOdes
 
-item2.style.backgroundColor="green";
-
-var item3 = document.querySelector('.list-group-item:nth-child(3)');
-item3.style.opacity="0";
+console.log("childnodes=",itenList.childNodes);
+// lastelementchild
+console.log("childnodes=lastElementChild",itenList.lastElementChild)
+// lastchild
+// createchild
+// firstelementchild
+// firstchild
+// nextsibling
+// nextelementsibling
+// previoussibling
+// previouselementsibling
+// createelement
+// setAttribute
+// createtesxtnode
+// appendchild
 
 
 
 
-//QueryslectorAll
-//Using QuerySelectorALL change the font color to green for 2nd item in the item list
-//Choose all the odd elements and make their background green using QuerySelectorALL
+// Now go head and add HEllo word before Item Lister
+var newDiv = document.createElement('div');
 
-var items = document.querySelectorAll('.list-group-item');
+var newDivText=document.createTextNode('HEllo word');
 
-items[1].style.color='green';
+newDiv.appendChild(newDivText);
 
-var odd = document.querySelectorAll("li:nth-child(odd)");
+var container = document.querySelector('header .container');
+var h1 = document.querySelector('header h1');
 
- for(i=0;i<odd.length;i++){
-    odd[i].style.backgroundColor="#0f0";
-}
+
+
+container.insertBefore(newDiv,h1);
+
+// Now go head and add HEllo word before Item 1
+var list = document.querySelector(".list-group")
+var firstitem = list.firstChild
+
+list.insertBefore(newDiv,firstitem)
+// If stuck for long check the hints.
+
